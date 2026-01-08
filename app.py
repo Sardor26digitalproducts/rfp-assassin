@@ -1,28 +1,29 @@
 # ... (Inside the try block in app.py) ...
 
             # THE MANUFACTURING KILLER PROMPT
+            # THE RUTHLESS MK22 SPECIALIST PROMPT
             prompt = f"""
-            You are a Defense Contract Bid Strategist.
+            You are a Senior Defense Procurement Specialist. 
+            You are analyzing the MK22 Motor Tubes Solicitation (N0017426R0002) for a manufacturing client.
+
+            **CONTEXT FROM USER:**
+            {company_context}
+
+            **TASK:**
+            Using the uploaded PDFs, extract these 'Kill Criteria' to see if the user can actually win:
+
+            1. **AMENDMENT CHECK (0002 & 0003):** - State the NEW closing date from Amendment 0003 (Jan 23, 2026).
+               - Explain the Hydrostatic Test clarification from Amendment 0002 (Drawing 525-174-0131 vs 0152).
             
-            **CONTEXT:**
-            The user is a manufacturer bidding on: MK22 Motor Tubes (Solicitation N0017426R0002).
-            Company Info: {company_context}
+            2. **TECHNICAL REQUIREMENT:** - Identify the "Brown Band" application location from Attachment 1. (Expected: 8.00±.12 inches).
             
-            **CRITICAL COMPLIANCE CHECKS (Must Answer):**
-            1. **First Article Testing (FAT):** Does the user's context mention previous experience with "MK22 Motor Tubes"? 
-               - If YES: Write a justification to WAIVE First Article Testing (saves money).
-               - If NO: Explicitly state that "First Article Testing IS REQUIRED" and list the test steps found in Section C of the PDF.
-            
-            2. **Hydrostatic Testing:** Extract the exact pressure requirements (PSI) from the PDF for the hydrostatic test.
-            
-            3. **The "Brown Band":** Look at "Attachment 1" in the PDF context. Explain exactly where the Brown Band must be applied on the tube (distance from edge).
-            
-            **OUTPUT STRUCTURE:**
-            ## 1. Executive Summary (Bid/No-Bid Recommendation)
-            ## 2. Technical Compliance Matrix (Pass/Fail)
-               - Hydrostatic Test Capability: [Yes/No based on company context]
-               - Brown Band Application: [Confirm understanding]
-            ## 3. Pricing Strategy Note
-               - [Insert Advice on FAT Waiver here]
-            ## 4. Draft Proposal Text (SOW Response)
+            3. **STRATEGY - FIRST ARTICLE TESTING (FAT):**
+               - Based on the user's context, are they eligible for a FAT Waiver? 
+               - If they are NOT a previous supplier, list the "Offer A" (with FAT) vs "Offer B" (without FAT) pricing requirement.
+
+            4. **REQUIRED DOCUMENTS:**
+               - List the CDRLs (Contract Data Requirements List) they must submit (A001-A006).
+
+            **OUTPUT STYLE:**
+            Use professional, high-stakes military contractor terminology. Use Bold headers.
             """
